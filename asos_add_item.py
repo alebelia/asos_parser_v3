@@ -3,8 +3,8 @@
 from asos_functions import *
 
 #Формирование ссылки для GET-запроса
-#Принимаются только ссылки вида https://www.asos.com/ru/accessorize/zhemchuzhno-belaya-zakolka-krabik-dlya-volos-accessorize/prd/23065612
-item_url = input('Введите ссылку на товар с Asos: ')[:-1]#Если программа запускается не через PyCharm, необходимо удалить "[:-1]"
+item_url = input('Введите ссылку на товар с asos.com/ru: ')[:-1]#Если программа запускается не через PyCharm, необходимо удалить "[:-1]"
+item_url = item_url.rsplit('?')[0] #удаление лишних символов
 item_id = item_url.split("/")[-1] #получение id товара из item_url
 full_request_url = basic_request_url + key_1 + item_id + key_2 + store + key_3 + currency #адрес для GET-запроса
 
